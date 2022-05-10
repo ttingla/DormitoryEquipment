@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/s2shsyzxsbzyglxthsg203859?useUnicode=true&amp;amp;amp;amp;amp;amp;characterEncoding=utf-8">
+		</property>
+		<property name="username" value="sa"></property>
+		<property name="password" value="sa123456"></property>
+	</bean>
+	
+	<!-- <bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.microsoft.sqlserver.jdbc.SQLServerDriver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/s2shsyzxsbzyglxthsg203859">
+		</property>
+		<property name="username" value="sa"></property>
+		<property name="password" value="sa123456"></property>
+	</bean>-->
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop> 
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/model/TAllusers.hbm.xml</value>
+				<value>com/model/TYonghuzhuce.hbm.xml</value>
+				<value>com/model/TXinwentongzhi.hbm.xml</value>
+				<value>com/model/TLiuyanban.hbm.xml</value>
+				<value>com/model/TPinglun.hbm.xml</value>
+				<value>com/model/TShebeixinxi.hbm.xml</value>				<value>com/model/TDaibanshiyi.hbm.xml</value>				<value>com/model/TJianxiuzhouqi.hbm.xml</value>				<value>com/model/TJishutuzhi.hbm.xml</value>				<value>com/model/TGouzhijihua.hbm.xml</value>				<value>com/model/TYuangongxinxi.hbm.xml</value>				<!--jixacichxu1-->
+		    </list>
+		</property>
+	</bean>
+	
+	
+	<bean id="lyblistAction" class="com.action.liuyanbanAction" scope="prototype">
+	    <property name="liuyanbanDAO">
+			<ref bean="TLiuyanbanDAO" />
+		</property>
+		
+	</bean>
+
+	
+	<!-- houtai login -->
+	<bean id="loginService" class="com.service.loginService">
+		<property name="allusersDAO">
+			<ref bean="TAllusersDAO" />
+		</property>
+		<property name="yuangongxinxiDAO">
+			<ref bean="TYuangongxinxiDAO" />
+		</property>	<!--jixacichxu3-->
+	</bean>
+	
+	<bean id="TAllusersDAO" class="com.dao.TAllusersDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="allusersAction" class="com.action.allusersAction" scope="prototype">
+		<property name="allusersDAO">
+			<ref bean="TAllusersDAO" />
+		</property>
+	</bean>
+	
+	<bean id="TYonghuzhuceDAO" class="com.dao.TYonghuzhuceDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="yonghuzhuceAction" class="com.action.yonghuzhuceAction" scope="prototype">
+		<property name="yonghuzhuceDAO">
+			<ref bean="TYonghuzhuceDAO" />
+		</property>
+	</bean>
+	
+	
+	<bean id="TXinwentongzhiDAO" class="com.dao.TXinwentongzhiDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="xinwentongzhiAction" class="com.action.xinwentongzhiAction" scope="prototype">
+		<property name="xinwentongzhiDAO">
+			<ref bean="TXinwentongzhiDAO" />
+		</property>
+	</bean>
+	
+
+	
+	<bean id="TLiuyanbanDAO" class="com.dao.TLiuyanbanDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="liuyanbanAction" class="com.action.liuyanbanAction" scope="prototype">
+		<property name="liuyanbanDAO">
+			<ref bean="TLiuyanbanDAO" />
+		</property>
+	</bean>
+	
+	<bean id="TPinglunDAO" class="com.dao.TPinglunDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pinglunAction" class="com.action.pinglunAction" scope="prototype">
+		<property name="pinglunDAO">
+			<ref bean="TPinglunDAO" />
+		</property>
+	</bean>
+	
+	<bean id="TShebeixinxiDAO" class="com.dao.TShebeixinxiDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="shebeixinxiAction" class="com.action.shebeixinxiAction" scope="prototype">
+		<property name="shebeixinxiDAO">
+			<ref bean="TShebeixinxiDAO" />
+		</property>
+	</bean>	<bean id="TDaibanshiyiDAO" class="com.dao.TDaibanshiyiDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="daibanshiyiAction" class="com.action.daibanshiyiAction" scope="prototype">
+		<property name="daibanshiyiDAO">
+			<ref bean="TDaibanshiyiDAO" />
+		</property>
+	</bean>	<bean id="TJianxiuzhouqiDAO" class="com.dao.TJianxiuzhouqiDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="jianxiuzhouqiAction" class="com.action.jianxiuzhouqiAction" scope="prototype">
+		<property name="jianxiuzhouqiDAO">
+			<ref bean="TJianxiuzhouqiDAO" />
+		</property>
+	</bean>	<bean id="TJishutuzhiDAO" class="com.dao.TJishutuzhiDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="jishutuzhiAction" class="com.action.jishutuzhiAction" scope="prototype">
+		<property name="jishutuzhiDAO">
+			<ref bean="TJishutuzhiDAO" />
+		</property>
+	</bean>	<bean id="TGouzhijihuaDAO" class="com.dao.TGouzhijihuaDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="gouzhijihuaAction" class="com.action.gouzhijihuaAction" scope="prototype">
+		<property name="gouzhijihuaDAO">
+			<ref bean="TGouzhijihuaDAO" />
+		</property>
+	</bean>	<bean id="TYuangongxinxiDAO" class="com.dao.TYuangongxinxiDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="yuangongxinxiAction" class="com.action.yuangongxinxiAction" scope="prototype">
+		<property name="yuangongxinxiDAO">
+			<ref bean="TYuangongxinxiDAO" />
+		</property>
+	</bean>	<!--jixacichxu2-->
+	
+	
+	</beans>
+

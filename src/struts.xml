@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE struts PUBLIC   
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+     
+     
+<struts>
+    <package name="liu" extends="struts-default">
+        <global-results>
+            <result name="succeed">/common/succeed.jsp</result>
+            <result name="successAdd">/common/add_success.jsp</result>
+            <result name="successDel">/common/del_success.jsp</result>
+            <result name="successUpdate">/common/update_success.jsp</result>
+            <result name="msg">/common/msg.jsp</result>
+        </global-results>
+        
+       <action name="upload" class="com.util.upload" method="upload">
+             <result name="success">/upload/upload_re.jsp</result>
+        </action>
+       
+		<action name="lyblist" class="lyblistAction" method="lyblist">
+            <result name="success">lyblist.jsp</result>
+        </action>
+		
+		<action name="allusersAdd" class="allusersAction" method="allusersAdd">
+        </action>
+        <action name="allusersDel" class="allusersAction" method="allusersDel">
+        </action>
+        <action name="allusersList" class="allusersAction" method="allusersList">
+            <result name="success">yhzhgl.jsp</result>
+        </action>
+        
+		<action name="yonghuzhuceAdd" class="yonghuzhuceAction" method="yonghuzhuceAdd">
+        </action>
+        <action name="yonghuzhuceDel" class="yonghuzhuceAction" method="yonghuzhuceDel">
+        </action>
+		 <action name="yonghuzhuceIssh" class="yonghuzhuceAction" method="yonghuzhuceIssh">
+        </action>
+        <action name="yonghuzhuceList" class="yonghuzhuceAction" method="yonghuzhuceList">
+            <result name="success">yonghuzhuce_list.jsp</result>
+        </action>
+        <action name="yonghuzhucePre" class="yonghuzhuceAction" method="yonghuzhucePre">
+            <result name="success">yonghuzhuce_updt.jsp</result>
+        </action>
+		<action name="yonghuzhucePre2" class="yonghuzhuceAction" method="yonghuzhucePre2">
+            <result name="success">yonghuzhuce_updt2.jsp</result>
+        </action>
+        <action name="yonghuzhuceUpdt" class="yonghuzhuceAction" method="yonghuzhuceUpdt">
+        </action>
+		<action name="yonghuzhuceUpdt2" class="yonghuzhuceAction" method="yonghuzhuceUpdt2">
+        </action>
+        <action name="yonghuzhuceRes" class="yonghuzhuceAction" method="yonghuzhuceRes">
+            <result name="success">/admin/yonghuzhuce/yonghuzhuceRes.jsp</result>
+        </action>
+		
+	
+		
+		
+		<action name="xinwentongzhiAdd" class="xinwentongzhiAction" method="xinwentongzhiAdd">
+        </action>
+        <action name="xinwentongzhiDel" class="xinwentongzhiAction" method="xinwentongzhiDel">
+        </action>
+        <action name="xinwentongzhiList" class="xinwentongzhiAction" method="xinwentongzhiList">
+            <result name="success">xinwentongzhi_list.jsp</result>
+        </action>
+        <action name="xinwentongzhiPre" class="xinwentongzhiAction" method="xinwentongzhiPre">
+            <result name="success">xinwentongzhi_updt.jsp</result>
+        </action>
+        <action name="xinwentongzhiUpdt" class="xinwentongzhiAction" method="xinwentongzhiUpdt">
+        </action>
+		<action name="news" class="xinwentongzhiAction" method="news">
+            <result name="success">news.jsp</result>
+        </action>
+		<action name="ggdetail" class="xinwentongzhiAction" method="ggdetail">
+            <result name="success">gg_detail.jsp</result>
+        </action>
+		
+		
+		
+		<action name="liuyanbanAdd" class="liuyanbanAction" method="liuyanbanAdd">
+        </action>
+        <action name="liuyanbanDel" class="liuyanbanAction" method="liuyanbanDel">
+        </action>
+        <action name="liuyanbanList" class="liuyanbanAction" method="liuyanbanList">
+            <result name="success">liuyanban_list.jsp</result>
+        </action>
+        <action name="liuyanbanPre" class="liuyanbanAction" method="liuyanbanPre">
+            <result name="success">liuyanban_updt.jsp</result>
+        </action>
+		<action name="liuyanbanHf" class="liuyanbanAction" method="liuyanbanHf">
+            <result name="success">liuyanban_updtlb.jsp</result>
+        </action>
+        <action name="liuyanbanUpdt" class="liuyanbanAction" method="liuyanbanUpdt">
+        </action>
+		<action name="pinglunAdd" class="pinglunAction" method="pinglunAdd">
+        </action>
+        <action name="pinglunDel" class="pinglunAction" method="pinglunDel">
+        </action>
+        <action name="pinglunList" class="pinglunAction" method="pinglunList">
+            <result name="success">pinglun_list.jsp</result>
+        </action>
+        <action name="pinglunPre" class="pinglunAction" method="pinglunPre">
+            <result name="success">pinglun_updt.jsp</result>
+        </action>
+        <action name="pinglunUpdt" class="pinglunAction" method="pinglunUpdt">
+        </action>
+		
+		
+		<action name="shebeixinxiAdd" class="shebeixinxiAction" method="shebeixinxiAdd"></action>
+		<action name="shebeixinxiDel" class="shebeixinxiAction" method="shebeixinxiDel"></action>
+		<action name="shebeixinxiList" class="shebeixinxiAction" method="shebeixinxiList"><result name="success">shebeixinxi_list.jsp</result></action>
+		<action name="shebeixinxiPre" class="shebeixinxiAction" method="shebeixinxiPre"><result name="success">shebeixinxi_updt.jsp</result></action>
+		<action name="shebeixinxiUpdt" class="shebeixinxiAction" method="shebeixinxiUpdt"></action>
+		<action name="shebeixinxiDetail" class="shebeixinxiAction" method="shebeixinxiDetail"><result name="success">shebeixinxi_detail.jsp</result></action>				<action name="daibanshiyiAdd" class="daibanshiyiAction" method="daibanshiyiAdd"></action>
+		<action name="daibanshiyiDel" class="daibanshiyiAction" method="daibanshiyiDel"></action>
+		<action name="daibanshiyiList" class="daibanshiyiAction" method="daibanshiyiList"><result name="success">daibanshiyi_list.jsp</result></action>
+		<action name="daibanshiyiPre" class="daibanshiyiAction" method="daibanshiyiPre"><result name="success">daibanshiyi_updt.jsp</result></action>
+		<action name="daibanshiyiUpdt" class="daibanshiyiAction" method="daibanshiyiUpdt"></action>
+		<action name="daibanshiyiDetail" class="daibanshiyiAction" method="daibanshiyiDetail"><result name="success">daibanshiyi_detail.jsp</result></action>				<action name="jianxiuzhouqiAdd" class="jianxiuzhouqiAction" method="jianxiuzhouqiAdd"></action>
+		<action name="jianxiuzhouqiDel" class="jianxiuzhouqiAction" method="jianxiuzhouqiDel"></action>
+		<action name="jianxiuzhouqiList" class="jianxiuzhouqiAction" method="jianxiuzhouqiList"><result name="success">jianxiuzhouqi_list.jsp</result></action>
+		<action name="jianxiuzhouqiPre" class="jianxiuzhouqiAction" method="jianxiuzhouqiPre"><result name="success">jianxiuzhouqi_updt.jsp</result></action>
+		<action name="jianxiuzhouqiUpdt" class="jianxiuzhouqiAction" method="jianxiuzhouqiUpdt"></action>
+		<action name="jianxiuzhouqiDetail" class="jianxiuzhouqiAction" method="jianxiuzhouqiDetail"><result name="success">jianxiuzhouqi_detail.jsp</result></action>				<action name="jishutuzhiAdd" class="jishutuzhiAction" method="jishutuzhiAdd"></action>
+		<action name="jishutuzhiDel" class="jishutuzhiAction" method="jishutuzhiDel"></action>
+		<action name="jishutuzhiList" class="jishutuzhiAction" method="jishutuzhiList"><result name="success">jishutuzhi_list.jsp</result></action>
+		<action name="jishutuzhiPre" class="jishutuzhiAction" method="jishutuzhiPre"><result name="success">jishutuzhi_updt.jsp</result></action>
+		<action name="jishutuzhiUpdt" class="jishutuzhiAction" method="jishutuzhiUpdt"></action>
+		<action name="jishutuzhiDetail" class="jishutuzhiAction" method="jishutuzhiDetail"><result name="success">jishutuzhi_detail.jsp</result></action>				<action name="gouzhijihuaAdd" class="gouzhijihuaAction" method="gouzhijihuaAdd"></action>
+		<action name="gouzhijihuaDel" class="gouzhijihuaAction" method="gouzhijihuaDel"></action>
+		<action name="gouzhijihuaList" class="gouzhijihuaAction" method="gouzhijihuaList"><result name="success">gouzhijihua_list.jsp</result></action>
+		<action name="gouzhijihuaPre" class="gouzhijihuaAction" method="gouzhijihuaPre"><result name="success">gouzhijihua_updt.jsp</result></action>
+		<action name="gouzhijihuaUpdt" class="gouzhijihuaAction" method="gouzhijihuaUpdt"></action>
+		<action name="gouzhijihuaList2" class="gouzhijihuaAction" method="gouzhijihuaList2"><result name="success">gouzhijihua_list2.jsp</result></action>				<action name="yuangongxinxiAdd" class="yuangongxinxiAction" method="yuangongxinxiAdd"></action>
+		<action name="yuangongxinxiDel" class="yuangongxinxiAction" method="yuangongxinxiDel"></action>
+		<action name="yuangongxinxiList" class="yuangongxinxiAction" method="yuangongxinxiList"><result name="success">yuangongxinxi_list.jsp</result></action>
+		<action name="yuangongxinxiPre" class="yuangongxinxiAction" method="yuangongxinxiPre"><result name="success">yuangongxinxi_updt.jsp</result></action>
+		<action name="yuangongxinxiUpdt" class="yuangongxinxiAction" method="yuangongxinxiUpdt"></action>
+		<action name="yuangongxinxiDetail" class="yuangongxinxiAction" method="yuangongxinxiDetail"><result name="success">yuangongxinxi_detail.jsp</result></action>		<action name="yuangongxinxiPre2" class="yuangongxinxiAction" method="yuangongxinxiPre2"><result name="success">yuangongxinxi_updt2.jsp</result></action>		<action name="yuangongxinxiUpdt2" class="yuangongxinxiAction" method="yuangongxinxiUpdt2"></action>				
+
+    </package>
+</struts>
