@@ -1,0 +1,109 @@
+├─DormitoryEquipment
+│ │ MainTimeLine.qrc
+│ │ 
+│ ├─Java Resouces
+│ │ │ 
+│ │ ├─com.action管理业务调度和跳转
+│ │ │ ├─allusersAction控制所有用户
+│ │ │ ├─daibanshiyiAction控制代办事宜
+│ │ │ ├─gouzhijihuaAction控制购置计划
+│ │ │ ├─jianxiuzhouqiAction控制检修周期
+│ │ │ ├─jishutuzhiAction控制技术图纸
+│ │ │ ├─liuyanbanAction控制留言板
+│ │ │ ├─pinglunAction控制评论区
+│ │ │ ├─shebeixinxiAction控制设备
+│ │ │ ├─xinwentongzhiAction控制新闻
+│ │ │ ├─yonghuzhuceAction控制注册
+│ │ │ └─yuangongxinxiAction控制员工
+
+│ │ ├─com.dao对数据库访问的实现类
+│ │ │ ├─TALLusersDAO对用户表访问的实现
+│ │ │ ├─TDaibanshiyiDAO对待办事宜表访问的实现
+│ │ │ ├─TGouzhijihuaDAO对购置计划表访问的实现
+│ │ │ ├─TJianxiuzhouqiDAO对检修周期表访问的实现
+│ │ │ ├─TJishutuzhiDAO对技术图纸表访问的实现
+│ │ │ ├─TLiuyanbanDAO对留言板表访问的实现
+│ │ │ ├─TPinglunDAO对评论表访问的实现
+│ │ │ ├─TShebeixinxiDAO对设备信息表访问的实现
+│ │ │ ├─TXinwentongzhiDAO对新闻表访问的实现
+│ │ │ └─TYuangongxinxiDAO对员工表访问的实现
+
+│ │ ├─com.model放置hibernate反向工程生成的bean和该bean对应的.hbm.xml文件
+│ │ │ ├─TAllusers.java存放用户相关数据信息
+│ │ │ ├─TDaibanshiyi.java存放代办事宜相关数据信息
+│ │ │ ├─TGouzhijihua.java存放购置计划相关数据信息
+│ │ │ ├─TJianxiuzhouqi.java存放检修周期相关数据信息
+│ │ │ ├─TJishutuzhi.java存放技术图纸相关数据信息
+│ │ │ ├─TLiuyanban.java存放留言板相关数据信息
+│ │ │ ├─TPinglun.java存放评论相关数据信息
+│ │ │ ├─TShebeixinxi.java存放设备相关数据信息
+│ │ │ ├─TXinwentongzhi.java存放新闻通知相关数据信息
+│ │ │ ├─TYonghuzhuce.java存放用户注册相关数据信息
+│ │ │ ├─TYuangongxinxi.java存放用户相关数据信息
+│ │ │ ├─TAllusers.hbm.xml
+│ │ │ ├─TDaibanshiyi.hbm.xml
+│ │ │ ├─TGouzhijihua.hbm.xml
+│ │ │ ├─TJianxiuzhouqi.hbm.xml
+│ │ │ ├─TJishutuzhi.hbm.xml
+│ │ │ ├─TLiuyanban.hbm.xml
+│ │ │ ├─TPinglun.hbm.xml
+│ │ │ ├─TShebeixinxi.hbm.xml
+│ │ │ ├─TXinwentongzhi.hbm.xml
+│ │ │ ├─TYonghuzhuce.hbm.xml
+│ │ │ └─TYuangongxinxi.hbm.xml
+
+│ │ ├─com.service具体功能实现
+│ │ │ ├─loginService登录操作
+
+│ │ ├─com.util工具性质的包
+│ │ │ ├─CheckCode验证码生成
+│ │ │ ├─Constant常量
+│ │ │ ├─db数据库操作
+│ │ │ ├─Pagesize页数
+│ │ │ ├─Pagination封装页面显示逻辑
+│ │ │ ├─upload下载为excel
+│ │ │ ├─Util时间显示
+│ │ ├─log4j.properties设置记录器的级别、存放器和布局
+│ │ ├─structs.properties配置文件
+│ │ └─struts.xml Struts 2的核心配置文件
+
+│ ├─JavaScript Resources
+│ ├─WebRoot
+│ │ ├─common操作成功页面
+│ │ ├─factory数据库连接失败
+│ │ ├─images图片
+│ │ ├─js布局相关
+│ │ ├─WEB-INF安全目录
+│ │ ├─about.htm关于我们
+│ │ ├─databack.jsp数据备份
+│ │ ├─default.jsp登录失败
+│ │ ├─hsgfenye.jsp页数记录
+│ │ ├─image.jsp
+│ │ ├─left_guanliyuan.jsp管理员左侧菜单
+│ │ ├─left_yuangong.jsp员工左侧菜单
+│ │ ├─login.jsp登录
+│ │ ├─logout.jsp登出
+│ │ ├─main.jsp登入
+│ │ ├─mod2.jsp修改密码
+│ │ ├─sh2.jsp审核
+│ │ ├─sy.jsp下标展示
+│ │ ├─top.jsp顶部信息
+│ │ ├─yhzhgl.jsp未登录或超时
+│ │ ├─yuangongxinxi_add.jsp员工增加
+│ │ ├─yuangongxinxi_detail.jsp员工详情
+│ │ ├─yuangongxinxi_list_yanben.jsp
+│ │ ├─yuangongxinxi_list.jsp员工信息查询
+│ │ ├─yuangongxinxi_listxis.jsp员工信息
+│ │ ├─yuangongxinxi_tj_bumen.jsp部门统计
+│ │ ├─yuangongxinxi_tj_xingbie.jsp性别统计
+│ │ └─yuangongxinxi_updt.jsp更新员工信息
+
+
+
+
+
+
+
+
+
+
